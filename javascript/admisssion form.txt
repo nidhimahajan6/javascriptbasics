@@ -1,0 +1,75 @@
+<html>
+    
+	  <head>
+	       <title>    </title>
+		        <script type="text/javascript">
+				function show_fees(){
+				switch(f1.course.selectedIndex)
+				{
+				case 0:f1.course.fees.value=5000;
+				case 1:f1.course.fees.value=4000;
+				case 2:f1.course.fees.value=8000;
+				case 3:f1.course.fees.value=6000;
+				
+				}}
+				
+				
+				
+				function calc_conc(i){
+				
+				if(i==0)
+				f1.cfees.value=1000;
+				elseif(i==1)
+				f1.cfees.value=1500;
+				elseif
+				f1.cfees.value=1600;
+				else
+				fi.cfees.value=1800;
+				
+				}
+				
+				
+				
+		   
+		        <script>
+		   <body>
+		   <form name="f1>
+		   <table border="2">
+		   </tr>
+		   <td>COURSES:</td>
+		   <td>< selet type="text" name="course">
+		  <option>html
+		   <option>javascript
+		   <option>mysql
+		   <option>php
+		   </select></td></tr>
+		   <tr>
+		   <td> FEES :</td>
+		  <td> <input type="text" name =fees></td></tr>
+		  <tr>
+		  <td>reservation</td>
+		  <td><input type="radio" name =""resrve" value="sc">
+		  <input type="radio" name =""resrve" value="obc">
+		  <input type="radio" name =""resrve" value="st">
+		  <input type="radio" name =""resrve" value="gen">
+		  </td></tr>
+		  <tr>
+		  <td>concession fees </td>
+		  <td><input type="text" name="cfees" ></td></tr>
+		  <tr>
+		  <td>amount paid</td>
+		  <td><input type="text" name="pfees" ></td></tr>
+		  <tr>
+		  <td>calculate due</td>
+		  <td><input type="button" name="caldue" value="due check"></td></tr>
+		  <tr>
+		  <td>due fees</td>
+		  <td><input type="text" name="dfees" >   </td>
+		  </tr>
+		  </table>
+		   
+		 </form>
+		
+		   </body>
+	</head>
+<html>
