@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+
+<body>
+<script>
+  function rank(f){
+   return 10000 * f;
+  }
+
+var t = function(){
+  return "akkhil";
+}
+
+
+	(function(){
+         var sRank = 12;
+	 document.write("State rank is " + sRank+" </br>");
+
+	  document.write("All india rank  is "+rank(sRank));	
+	})();
+</script>
+</body>
+
+
+</html>

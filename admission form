@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    
+	  <head>
+	       <title>  admission fees form </title>
+		        <script type="text/javascript">
+				
+				function show_fees(){
+		
+				switch(f1.course.selectedIndex)
+				{
+				case 0 :f1.fees.value=5000; break;
+				case 1  :f1.fees.value=4000; break;
+				case 2 :f1.fees.value=8000; break;
+				case 3 :f1.fees.value=6000; break;
+
+			
+                }}				
+				function calc_conc(i){
+				if(i==0){
+				f1.cfees.value=1000;
+				return;
+				}
+				else if(i==1)
+				f1.cfees.value=1500;
+				else if(i==2)
+				f1.cfees.value=1600;
+				else(i==3)
+				f1.cfees.value=1800;
+				
+				}
+				function calc_due(x,y){
+				document.getElementById("cal_fee").value=y-x;
+				//f1.dfees.value= x - y;
+				}
+				</script> 
+	</head>
+		   
+		   <body bgcolor="greens">
+		    <table border="2" align="center" bgcolor= "pink" >
+		   <form name="f1">
+		   <tr>
+		   <td>COURSES:</td>
+		   <td><select name="course"  value="course" onchange = "show_fees();"/>
+		    <option  > html
+		   <option  > javascript
+		   <option > mysql
+		   <option > php
+		   </select></td></tr></br>
+		   <tr>
+		   <td> FEES:</td>
+		  <td> <input type="text" name = "fees"  /></td></tr></br></br>
+		  <tr>
+		  <td>reservation</td>
+		 <td> <input type="radio" name ="resrve" value="sc" onclick = "return calc_conc(0)">sc</br>
+		  <input type="radio" name ="resrve" value="obc"   onclick = "return calc_conc(1)">obc</br>
+		  <input type="radio" name ="resrve" value="st"    onclick = "return calc_conc(2)">st</br>
+		  <input type="radio" name ="resrve" value="gen"    onclick = "return calc_conc(3)">gen</br>
+		  </td></tr></br>
+		  <tr>
+		  <td>concession fees</td>
+		  <td><input type="text" name ="cfees"  </td>
+		  </tr>
+		  <tr>
+		  <td>amount paid</td>  
+		  <td><input type="text" name="pfees"  /></td></tr></br>
+		  
+		  <tr>
+		  <td>calculate due</td>
+		  <td><input  type="button" name="caldue" value="due check" onclick=" calc_due(f1.fees.value,f1.cfees.value);"/>
+		  
+		  <tr>
+		  <td>due fees</td>
+		  <td><input id="cal_fee" type="text" name="dfees" />   </td>
+		  </tr></br>
+		  </form>
+		  </table>
+		   
+		
+		
+		   </body>
