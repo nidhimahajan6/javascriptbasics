@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> home page</title>
+	 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta charset="UTF-8">
+    <style  type="text/css">
+ #container{
+    height:450px;
+    width:650px;
+    align:center;
+    margin:80px auto;
+    position:relative;
+ }
+ #img{
+    height: 450px;
+    width: 650px;
+    position:absolute;
+ }
+ #left_hold{
+    height:450px;
+    width: 100px;
+    position:absolute;
+    left:0px;
+ top:0px;
+ }
+ #right_hold{
+    height:450px;
+    width: 100px;
+    position:absolute;
+    right:0px;
+ top:0px;
+ }
+ .left{
+    height:50px;
+    width:50px;
+    position:absolute;
+    top:40%;
+    left:0px;
+ }
+ .right{
+    height:50px;
+    width:50px;
+    position:absolute;
+    top:40%;
+    right:0px;
+ }
+ #searchbox
+{
+    background-color: #eaf8fc;
+    background-image: linear-gradient(#fff, #d4e8ec);
+    border-radius: 35px;    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c4d9df #a4c3ca #83afb7;            
+    width: 500px;
+    height: 35px;
+    padding: 10px;
+    margin: 100px auto 50px;
+    overflow: hidden; /* Clear floats */
+}
+
+ </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="file:///home/nidhi/Desktop/nidhi/home.html">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="signUpId">SIGNUP</a></li>
+          <li><a href="#" id="logInId">LOGIN</a></li> 
+        </ul>
+      </li>
+      <li><a href="#">CONTACT US</a></li> 
+      <li><a href="#">COLLEGE DETAIL</a></li> 
+    </ul>
+    <form id="searchbox" action="">
+    <input id="search" type="text" placeholder="Type here">
+    <input id="submit" type="submit" value="Search">
+</form>
+  </div>
+</nav>
+
+ </div>
+
+                     <div id="container">
+                     <img src="file:///home/nidhi/Desktop/nidhi/images/img1.jpg" id="img" />
+                     <div id="left_hold" ><img onclick="slide(-1)" class="left" src="file:///home/nidhi/Desktop/nidhi/images/left.png"/></div>
+                     <div id="right_hold" ><img onclick="slide(1)" class="right" src="file:///home/nidhi/Desktop/nidhi/images/right.jpg"/></div>
+
+
+                        </div> 
+
+
+                        <script type="text/javascript"> 
+
+                  var imagecount=1;
+                  total=4;
+                  function slide(x){
+                    var image=document.getElementById("img");
+                    imagecount=imagecount+x;
+                    if(imagecount>total){
+                        imagecount=1;
+                    }
+                    if(imagecount<1){
+                        imagecount=total;
+                    }
+
+                    image.src="file:///home/nidhi/Desktop/nidhi/images/img"+imagecount+".jpg";
+                  }
+                  </script>
+
+
+
+</body>
+</html>>
