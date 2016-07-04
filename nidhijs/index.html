@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <style type="text/css">
+    html, #button {
+      font-family: Helvetica Neue;
+    }
+    #comment-body {
+      width: 400px;
+      height: 400px;
+      font-family: arial;
+      font-size: 1.5em;
+    }
+    #button {
+      border:3px solid grey;
+      width: 30%;
+      height: 30%;
+    vertical-align:right;
+
+    }
+    #comments{
+      height:405px;
+      width:405px;
+    border:5px solid black ;
+    }
+    #like{
+      text-align: right;
+    }
+  </style>
+
+  
+</head>
+
+<body>
+  <h1>RISING PRICES IS MAIN  PROBLEM IN INDIA !!! </h1>
+    <p> Hi all we know that the prices are going high day by day .Its very tough to get manage for poor and middle class families.we should take some steps so that the  people can cope up with the situation  what u guys think !!!
+    </p>
+   
+    <p></p>
+
+  <h2>Comments</h2>
+    <div id="comments">
+
+    <form id="new-comment">
+      <textarea name="body" id="comment-body" placeholder="comment here..."></textarea>
+      <input type="submit" value="Comment" id="button">
+    </form>
+    </div>
+     <div id="like">
+      <a href="#" id="like-link">Like</a>
+      (<span id="likes">0</span>)
+    </div>
+<script>
+    
+      var likeLink = document.getElementById("like-link");
+      var newCommentForm = document.getElementById("new-comment");
+      
+      
+      
+      // When the likeLink is clicked
+      // Get the innerHTML of numberOfLikes
+      // Parse value as Int
+      // increment that number by one
+      // set the innerHTML of numberOfLikes 
+      likeLink.addEventListener("click", function(event) {
+        var numberOfLikes = document.getElementById("likes");
+        event.preventDefault();
+        authenticate(function(username) {
+          var likes = parseInt(numberOfLikes.innerHTML);
+          numberOfLikes.innerHTML = likes + 1;
+        })
+      })
+      // Comments: 
+      // When the form is submitted
+      // Prevent form for actually submitting (preventDefault)
+      // Get the value of text area
+      // Append the current date to that value
+      // Create a new paragraph
+      // set that paragraphs innerHTML to the concatenated string
+      // Append the paragraph to the #comments
+      newCommentForm.addEventListener('submit', function(event) {
+        var newCommentBody = document.getElementById("comment-body");
+        var comments = document.getElementById("comments");
+        event.preventDefault();
+        var p = document.createElement('p');
+      
+        authenticate(function(username) {
+          var now = new Date();
+          var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
+          p.innerText = dateString + ": " + newCommentBody.value + " - " + username;
+          comments.appendChild(p);
+          newCommentForm.reset();
+        });
+      });
+      function authenticate(onLoginSuccess) {
+        var username = prompt("What is your name?");
+        if (username) onLoginSuccess() ;
+      };
+  </script>
+
+</body>
+
+
+</html>
